@@ -3,7 +3,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset = new Vector3(0f, 5f, -6f);
+    private Vector3 offset = new Vector3(16f, 20f, 10f);
     public float RotationSpeed = 200.0f;
     public float zoomSpeed = 2.0f;
     public float minZoom = 2f;
@@ -29,7 +29,7 @@ public class FollowPlayer : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * RotationSpeed * Time.deltaTime;
 
         yaw += mouseX;
-        pitch -= mouseY;
+        pitch += mouseY;
         pitch = Mathf.Clamp(pitch, -30f, 60f);
 
         // Control de zoom con suavizado
